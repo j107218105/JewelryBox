@@ -1,0 +1,58 @@
+伯維	許
+jewelrybox.tw@gmail.com
+1L3CK6ru4cj84
+September 08, 1992
+926012409
+
+Amazon:	VM31i6jo6
+ssh -i keyPair.pem ubuntu@54.169.2.145
+
+<VirtualHost *:80>
+	ServerName	www.jewelry-box.com.tw
+	ServerAlias	jewelry-box.com.tw
+	ServerAdmin	jewelrybox.tw@gmail.com
+
+	RewriteEngine	On
+	RewriteCond	%{HTTP_HOST}	^jewelry-box\.com\.tw
+	RewriteRule	(.*)		http://www.jewelry-box.com.tw [R=301,L]
+
+	ProxyRequests		Off
+	ProxyPreserveHost	On
+	ProxyVia		On
+	<Proxy *>
+		Order	deny,allow
+		Allow	from	all
+	</Proxy>
+	ProxyPass		/	ajp://localhost:8009/
+	ProxyPassReverse	/	ajp://localhost:8009/
+
+	# Possible values include: debug, info, notice, warn, error, crit, alert, emerg.
+	LogLevel	warn
+	CustomLog	${APACHE_LOG_DIR}/jewelryBox/access.log combined
+	ErrorLog	${APACHE_LOG_DIR}/jewelryBox/error.log
+</VirtualHost>
+
+/etc/vsftpd.user_list
+useradd \
+-c "寶盒計畫" \
+-d ~www-data/jewelryBox \
+-g 33 \
+-M \
+-N \
+-o \
+-s /bin/sh \
+-u 33 \
+jewelryBox
+
+www.smsgetpaid.com
+使用帳號：jewelrybox
+登入密碼：VM31i6jo6
+姓名(公司名稱)：寶和珍有限公司
+公司統一編號：24678494
+EMAIL信箱：jewelrybox.tw@gmail.com
+連絡電話：0911775133
+所在國家：臺灣省
+所在城市：高雄市
+郵遞區號：80250
+連絡地址：苓雅區四維三路一八五號二樓
+行動電話(帳號驗證使用)：0930940238

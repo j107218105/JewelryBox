@@ -1,0 +1,311 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<HTML dir="ltr" lang="zh-TW">
+	<HEAD>
+		<META charset="UTF-8">
+		<META content="width=device-width,initial-scale=1.0" name="viewport">
+		<LINK href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/vader/jquery-ui.min.css" rel="stylesheet" media="all" type="text/css"/>
+		<LINK href="STYLE/default.css" rel="stylesheet" media="all" type="text/css">
+		<LINK href="STYLE/someone.css" rel="stylesheet" media="all" type="text/css">
+		<SCRIPT src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></SCRIPT>
+		<SCRIPT src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></SCRIPT>
+		<SCRIPT src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/i18n/jquery-ui-i18n.min.js"></SCRIPT>
+		<SCRIPT src="SCRIPT/default.js"></SCRIPT>
+		<SCRIPT src="SCRIPT/form.js"></SCRIPT>
+		<SCRIPT src="register.js"></SCRIPT>
+		<TITLE>首次登入(註冊)</TITLE>
+	</HEAD>
+	<BODY>
+		<HEADER>
+			<DIV class="fL">
+				<A href="{@contextPath}/">銓穎國際形象網站後臺</A>
+				<SPAN>&raquo;</SPAN>
+				<A href="{@contextPath}/relativePath/">關鍵字|橫幅|知名客戶|合作廠商</A>
+			</DIV>
+			<A class="fR delete" href="{@contextPath}/">登出</A>
+		</HEADER>
+		<SECTION>
+			<DIV class="contentWrapper">
+				<FORM id="search" class="cF" action="{@contextPath}/relativePath/">
+					<DIV class="fR">
+						<SPAN style="margin:0 3px">
+							<LABEL>
+								<SPAN>每頁</SPAN>
+								<INPUT maxlength="2" name="s" type="text" value="10">
+								<SPAN>筆</SPAN>
+							</LABEL>
+							<SPAN>：</SPAN>
+							<LABEL>
+								<SPAN>第</SPAN>
+								<SELECT name="p">
+									<OPTION value="0" selected>1</OPTION>
+									<OPTION value="1">2</OPTION>
+								</SELECT>
+								<SPAN>/</SPAN>
+								<SPAN>2</SPAN>
+								<SPAN>頁</SPAN>
+							</LABEL>
+							<SPAN>(共</SPAN>
+							<SPAN>11</SPAN>
+							<SPAN>筆)</SPAN>
+						</SPAN>
+						<A class="button fontAwesome paginate" title="下一頁" tabindex="1"></A>
+						<A class="button fontAwesome paginate" title="最後頁" tabindex="1"></A>
+					</DIV>
+				</FORM>
+			</DIV>
+		</SECTION>
+		<DIV class="contentWrapper">
+			<NAV id="navigator">
+				<UL id="navParts">
+					<LI class="openCart">
+						<DIV class="bold">活動</DIV>
+						<UL class="navChapters">
+							<LI>
+								<!--<A href="{@contextPath}/available.asp">(含待確認)</A>-->
+								<A>未開始</A>
+							</LI>
+							<LI>
+								<A href="{@contextPath}/underway.asp">進行中</A>
+							</LI>
+							<LI>
+								<A href="{@contextPath}/finished.asp">已結束</A>
+							</LI>
+						</UL>
+					</LI>
+					<LI>
+						<DIV class="bold">撥款</DIV>
+						<UL class="navChapters">
+							<LI>
+								<A href="{@contextPath}/apply.asp">申請</A>
+							</LI>
+							<LI>
+								<A href="{@contextPath}/statement.asp">歷程</A>
+							</LI>
+						</UL>
+					</LI>
+					<LI>
+						<DIV class="bold">帳戶</DIV>
+						<UL class="navChapters">
+							<LI>
+								<A href="{@contextPath}/account.asp">個人資料</A>
+							</LI>
+							<LI>
+								<A href="{@contextPath}/score.asp">點數</A>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			</NAV>
+			<MENU id="bashful" type="toolbar">
+				<DIV id="shield">(關鍵字|橫幅|知名客戶|合作廠商) &#187; (列表|新增)</DIV>
+			</MENU>
+			<DIV id="pixelLine"></DIV>
+			<ARTICLE>
+				<DIV>
+					<FORM action="{@contextPath}/" method="post">
+						<INPUT name="from" type="hidden" value="{from}"/>
+						<INPUT name="facebookId" type="hidden" value="{facebookId}"/>
+						<INPUT name="googleId" type="hidden" value="{googleId}"/>
+						<FIELDSET>
+							<LEGEND>有<SPAN class="must"></SPAN>者為必填或必選欄位</LEGEND>
+							<TABLE class="fieldset">
+								<CAPTION>
+									<xsl:value-of select="errorMessage"/>
+								</CAPTION>
+								<TR>
+									<TH class="must">
+										<LABEL for="birthday">生日</LABEL>
+									</TH>
+									<TD>
+										<INPUT class="dP" id="birthday" name="birthday" type="text" value="{birthday}">
+									</TD>
+									<TD class="note">必填。</TD>
+								</TR>
+								<TR>
+									<TH class="must">性別</TH>
+									<TD>
+										<LABEL>
+											<INPUT name="gender" type="radio" value="false">
+											<SPAN>女性</SPAN>
+										</LABEL>
+										<LABEL>
+											<INPUT name="gender" type="radio" value="true">
+											<SPAN>男性</SPAN>
+										</LABEL>
+									</TD>
+									<TD class="note">必選。</TD>
+								</TR>
+								<TR>
+									<TH class="must">
+										<LABEL for="name">全名</LABEL>
+									</TH>
+									<TD>
+										<INPUT id="name" name="name" type="text" value="{name}">
+									</TD>
+									<TD class="note">必填。</TD>
+								</TR>
+								<TR>
+									<TH class="must">
+										<LABEL for="email">電子郵件</LABEL>
+									</TH>
+									<TD>
+										<INPUT id="email" name="email" type="text" value="{email}">
+									</TD>
+									<TD class="note">必填且不得與現有會員重複。</TD>
+								</TR>
+								<TR>
+									<TH>
+										<LABEL for="cellular">手機</LABEL>
+									</TH>
+									<TD>
+										<INPUT id="cellular" name="cellular" type="text" value="{cellular}">
+									</TD>
+									<TD class="note">可稍後補填、不得與現有會員重複；未填寫將會導致您無法接受活動通知簡訊。</TD>
+								</TR>
+								<TR>
+									<TH>
+										<LABEL for="occupation">職業</LABEL>
+									</TH>
+									<TD>
+										<SELECT id="occupation">
+											<OPTION value="">(職業)</OPTION>
+											<OPTION value="1">士農工商</OPTION>
+										</SELECT>
+									</TD>
+									<TD class="note">可稍後補選；未選擇可能導致您無法符合活動參加資格。</TD>
+								</TR>
+								<TR>
+									<TH>
+										<LABEL for="financialInstitution">金融機構</LABEL>
+									</TH>
+									<TD>
+										<SELECT id="financialInstitution">
+											<OPTION value="">(金融機構)</OPTION>
+											<OPTION value="1">中國信託</OPTION>
+										</SELECT>
+									</TD>
+									<TD class="note">可稍後補選；未選擇將會導致您無法申請撥款。</TD>
+								</TR>
+								<TR>
+									<TH>
+										<LABEL for="financialAccountHolder">金融帳戶戶名</LABEL>
+									</TH>
+									<TD>
+										<INPUT id="financialAccountHolder" disabled="" name="financialAccountHolder" type="text" value="{financialAccountHolder}">
+									</TD>
+									<TD class="note">可稍後補填；未填寫將會導致您無法申請撥款。</TD>
+								</TR>
+								<TR>
+									<TH>
+										<LABEL for="financialAccountNumber">金融帳戶號碼</LABEL>
+									</TH>
+									<TD>
+										<INPUT id="financialAccountNumber" disabled="" name="financialAccountNumber" type="text" value="{financialAccountNumber}">
+									</TD>
+									<TD class="note">可稍後補填；未填寫將會導致您無法申請撥款。</TD>
+								</TR>
+							</TABLE>
+							<DIV class="cF">
+								<INPUT class="fL" type="reset" value="取消">
+								<INPUT class="fR" type="submit" value="確定">
+							</DIV>
+						</FIELDSET>
+					</FORM>
+					<P><BR></P>
+					<TABLE class="find">
+						<THEAD>
+							<TR>
+								<TH>抬頭</TH>
+								<TH>顯示</TH>
+								<TH>修改</TH>
+							</TR>
+						</THEAD>
+						<TBODY>
+							<TR class="odd">
+								<TD>抬頭</TD>
+								<TD>
+									<A class="fontAwesome" tabindex="1">&#xF05E;</A>
+								</TD>
+								<TD>
+									<A class="fontAwesome" tabindex="1">&#xF14B;</A>
+								</TD>
+							</TR>
+							<TR>
+								<TD>抬頭</TD>
+								<TD>
+									<A class="fontAwesome" tabindex="1">&#xF00C;</A>
+								</TD>
+								<TD>
+									<A class="fontAwesome" tabindex="1">&#xF14B;</A>
+								</TD>
+							</TR>
+						</TBODY>
+					</TABLE>
+					<P><BR></P>
+					<FORM action="{@contextPath}/" method="post">
+						<FIELDSET>
+							<TABLE>
+								<CAPTION>
+									<xsl:value-of select="errorMessage"/>
+								</CAPTION>
+								<TR>
+									<TH class="must">
+										<LABEL for="title">抬頭</LABEL>
+									</TH>
+									<TD>
+										<INPUT id="title" name="title" type="text" value="{title}">
+									</TD>
+									<TD class="note">必填且不得重複</TD>
+								</TR>
+								<TR>
+									<TH>
+										<LABEL for="description">短述</LABEL>
+									</TH>
+									<TD>
+										<INPUT id="description" name="description" type="text" value="{description}">
+									</TD>
+									<TD class="note"></TD>
+								</TR>
+								<TR>
+									<TH class="must">
+										<LABEL for="logo">標幟</LABEL>
+									</TH>
+									<TD>
+										<INPUT id="logo" name="logo" type="file">
+									</TD>
+									<TD class="note">必要欄位(新增時)</TD>
+								</TR>
+								<TR>
+									<TH>
+										<LABEL for="site">網址</LABEL>
+									</TH>
+									<TD>
+										<INPUT id="site" name="site" type="text" value="{site}">
+									</TD>
+									<TD class="note">不得重複</TD>
+								</TR>
+								<TR>
+									<TD colspan="2">
+										<LABEL>
+											<INPUT name="shown" type="radio" value="false">
+											<SPAN>隱藏</SPAN>
+										</LABEL>
+										<LABEL>
+											<INPUT name="shown" type="radio" value="true">
+											<SPAN>顯示</SPAN>
+										</LABEL>
+									</TD>
+									<TD class="note">必選</TD>
+								</TR>
+							</TABLE>
+							<DIV class="cF">
+								<INPUT class="fL" type="reset" value="取消">
+								<INPUT class="fR" type="submit" value="確定">
+							</DIV>
+						</FIELDSET>
+					</FORM>
+				</DIV>
+			</ARTICLE>
+		</DIV>
+	</BODY>
+</HTML>

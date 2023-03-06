@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<non-jta-data-source>java:comp/env/jdbc/JewelryboxDS</non-jta-data-source>
+		<class>tw.jewelrybox.entity.Accordion</class>
+		<class>tw.jewelrybox.entity.Activity</class>
+		<class>tw.jewelrybox.entity.Candidate</class>
+		<class>tw.jewelrybox.entity.FinancialInstitution</class>
+		<class>tw.jewelrybox.entity.Mapping</class>
+		<class>tw.jewelrybox.entity.Method</class>
+		<class>tw.jewelrybox.entity.Privilege</class>
+		<class>tw.jewelrybox.entity.Someone</class>
+		<class>tw.jewelrybox.entity.District</class>
+		<class>tw.jewelrybox.entity.Feedback</class>
+		<class>tw.jewelrybox.entity.Statement</class>
+		<class>tw.jewelrybox.entity.History</class>
+		<properties>
+			<property name="eclipselink.jdbc.native-sql" value="true"/>
+			<property name="eclipselink.weaving" value="static"/>
+		</properties>
+	</persistence-unit>
+</persistence>

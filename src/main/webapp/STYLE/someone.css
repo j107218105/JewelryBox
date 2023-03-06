@@ -1,0 +1,61 @@
+/**
+ * @author: P-C Lin (a.k.a 高科技黑手)
+ */
+BODY{margin:0 auto;color:#000;background-color:#F2F2F2;font-family:'georgia','新細明體',sans-serif;font-size:66.6%}
+
+HEADER{position:fixed;top:0;z-index:128;width:100%;height:32px;color:#FFF;background-color:#414141;box-shadow:0 1px 1px rgba(0,0,0,.07);letter-spacing:.05em}
+HEADER A{margin:0 8px;display:inline-block;line-height:32px;color:#FFF;text-decoration:none}
+HEADER A[href]:hover{font-weight:bold}
+
+SECTION{margin-top:32px;position:fixed;top:0;z-index:64;width:100%;height:32px;background-color:#F2F2F2}
+
+FORM#search{margin-left:5px;height:32px}
+FORM#search DIV.fR{line-height:32px;cursor:default}
+FORM#search SELECT,FORM#search INPUT{margin:3px 0;height:calc(100% - 8px)}
+FORM#search INPUT[type='submit']{display:none}
+FORM#search INPUT[name='s']{width:16px;text-align:center}
+
+DIV.contentWrapper{margin:0 auto;width:980px}
+
+A.paginate{display:inline-block;width:16px;text-align:center}
+
+/*NAV#navigator{margin:0 5px;border:1px solid #E9E9E9;border-bottom-width:0;position:fixed;top:64px;bottom:0;width:198px;overflow:auto;background-color:#F9F9F9}*/
+NAV#navigator{margin:0 5px;border:1px solid #E9E9E9;border-bottom-width:0;position:fixed;top:64px;bottom:0;width:128px;overflow:auto;background-color:#F9F9F9}
+
+UL#navParts{margin:0;padding:0;line-height:140%;list-style-type:none;color:#808080}
+UL#navParts>LI{margin:0;padding:16px;border-bottom:1px solid #E9E9E9;line-height:150%;list-style-type:none;cursor:pointer}
+UL#navParts>LI.openCart{color:#000;background-color:#FFF;cursor:default}
+UL#navParts>LI.openCart>UL{display:list-item}
+UL#navParts>LI>DIV{font-size:128%}
+
+UL.navChapters{margin:0;padding:0;display:none;position:relative;top:16px;line-height:110%;overflow:hidden;list-style-type:none;list-style-position:outside;transition:height .3s ease-in-out 0s}
+UL.navChapters LI{margin-left:0;padding:0 0 8px;list-style-type:none;list-style-position:outside}
+UL.navChapters LI>A{margin-left:16px;display:inline-block;line-height:16px;overflow:hidden;color:#333;font-weight:bold;text-decoration:none;text-overflow:ellipsis;white-space:nowrap}
+UL.navChapters LI>A[href]{color:#666;font-weight:normal}
+UL.navChapters LI>A[href]:hover{font-weight:bold;text-decoration:underline}
+
+/*MENU#bashful{margin:0 0 0 215px;padding:0;position:fixed;top:64px;z-index:32;width:763px;height:32px;background-color:rgba(255,255,255,.8)}*/
+MENU#bashful{margin:0 0 0 145px;padding:0;position:fixed;top:64px;z-index:32;width:833px;height:32px;background-color:rgba(255,255,255,.8)}
+/*DIV#shield{border:1px solid #E9E9E9;border-bottom:0;position:absolute;width:763px;line-height:32px;background-color:#FFF;font-weight:bold;text-align:center;opacity:.8}*/
+DIV#shield{border:1px solid #E9E9E9;border-bottom:0;position:absolute;width:833px;line-height:32px;background-color:#FFF;font-weight:bold;text-align:center;opacity:.8}
+DIV#pixelLine{margin:0 0 0 145px;position:fixed;top:64px;z-index:64;width:833px;height:1px;background-color:#E9E9E9}
+
+/*ARTICLE{margin-left:215px;padding-top:32px;border:1px solid #E9E9E9;border-top:0;border-bottom:0;display:block;position:absolute;top:64px;width:763px;min-height:100%;overflow:auto;background-color:#FFF}*/
+ARTICLE{margin-left:145px;padding-top:32px;border:1px solid #E9E9E9;border-top:0;border-bottom:0;display:block;position:absolute;top:64px;width:833px;min-height:100%;overflow:auto;background-color:#FFF}
+ARTICLE>DIV{margin:1px 16px 32px}
+
+FIELDSET{border:1px solid #DEDEDF}
+TABLE.fieldset{border:0;border-collapse:collapse}
+TABLE.fieldset CAPTION{color:#C00}
+TABLE.fieldset TH{text-align:right;cursor:default}
+TABLE.fieldset TH:after{content:'：'}
+TABLE.fieldset TD{padding:6px 3px;text-align:left;cursor:default}
+TABLE.fieldset TD.note{color:#9197A3}
+LABEL,LABEL>SPAN{cursor:pointer}
+
+TABLE.find{border:1px solid #DFDFDF;border-collapse:collapse;width:100%;color:#666;text-align:center}
+TABLE.find THEAD>TR{background:linear-gradient(#FFF,#F6F7F8) rgba(0,0,0,0);font-weight:bold;word-wrap:break-word}
+TABLE.find THEAD TH{padding:6px 8px;border-width:1px 0 1px 1px;border-color:rgba(0,0,0,.1);border-style:solid;overflow:hidden;color:#141823;font-size:128%;white-space:nowrap}
+TABLE.find TBODY>TR.odd{background-color:#F6F7F8}
+TABLE.find TBODY TD{padding:6px 3px;border-color:#DEDEDF}
+TABLE.find TBODY TD>A{display:inline-block;line-height:24px;color:#334C83;font-size:24px;text-decoration:none}

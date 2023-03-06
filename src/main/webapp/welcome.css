@@ -1,0 +1,18 @@
+/**
+ * @author	P-C Lin (a.k.a 高科技黑手)
+ */
+HTML,BODY{margin:0;padding:0;width:100%;height:100%}
+IMG{vertical-align:middle}
+
+DIV#fb-root{display:none;visibility:hidden}
+HEADER{height:33%;vertical-align:bottom}
+DIV.authentication{position:relative;width:50%;height:calc(100% - 33%);color:#FFF;letter-spacing:3px}
+DIV#login{float:left;text-align:right}
+DIV#signin{float:right;text-align:left}
+DIV.authentication>BUTTON{margin:3px;padding:3px 8px;border:1px solid;border-radius:6px;display:inline-block;color:#FFF;font:12px/32px tahoma,sans-serif;cursor:pointer;transition:ease .3s}
+DIV.authentication>BUTTON>IMG{margin:0 3px 0 0}
+BUTTON#facebook{border-color:rgba(59,89,152,.3);background-color:#3B5998;box-shadow:3px 3px rgba(59,89,152,.3)}
+BUTTON#google{border-color:rgba(223,74,50,.3);background-color:#DF4A32;box-shadow:3px 3px rgba(223,74,50,.3)}
+BUTTON#facebook:hover{border-color:rgba(59,89,152,.6);box-shadow:3px 3px rgba(59,89,152,.6)}
+BUTTON#google:hover{border-color:rgba(223,74,50,.6);box-shadow:3px 3px rgba(223,74,50,.6)}
+DIV.authentication>BUTTON:hover>IMG{animation:spin .6s linear}@keyframes spin{100%{transform:rotate(360deg);}}
